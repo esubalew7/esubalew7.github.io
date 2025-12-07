@@ -253,17 +253,16 @@ body {
 }
 
 /*About page*/
-#about{
-      
+#about{  
       background: linear-gradient(135deg, #0b0c10 0%, #1f2833 100%);
       backdrop-filter: blur(5px);
-      display: flex;
-      
+      display: flex;   
 }
 /* Smooth image style */
 .about-img {
-  border: 3px solid rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
 }
 
 .about-img:hover {
