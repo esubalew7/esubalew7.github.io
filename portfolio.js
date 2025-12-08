@@ -99,24 +99,31 @@ document.addEventListener("DOMContentLoaded", function () {
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 
-// Load saved theme
-if (localStorage.getItem("theme") === "light") {
+// Load saved theme from localStorage
+const savedTheme = localStorage.getItem("theme");
+
+// Apply saved theme
+if (savedTheme === "light") {
   body.classList.add("light-theme");
-  themeToggle.innerHTML = '<i class="bi bi-brightness-high"></i>';
+  themeToggle.innerHTML = '<i class="bi bi-moon"></i>'; // show moon when in light mode
+} else {
+  body.classList.remove("light-theme");
+  themeToggle.innerHTML = '<i class="bi bi-brightness-high"></i>'; // show sun in dark mode
 }
 
-// Toggle theme
+// Toggle theme on click
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("light-theme");
 
   if (body.classList.contains("light-theme")) {
-    themeToggle.innerHTML = '<i class="bi bi-brightness-high"></i>';
+    themeToggle.innerHTML = '<i class="bi bi-moon"></i>'; // light mode → moon
     localStorage.setItem("theme", "light");
   } else {
-    themeToggle.innerHTML = '<i class="bi bi-moon"></i>';
+    themeToggle.innerHTML = '<i class="bi bi-brightness-high"></i>'; // dark mode → sun
     localStorage.setItem("theme", "dark");
   }
 });
+
 
 
 
